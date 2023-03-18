@@ -1,0 +1,7 @@
+D:\Studia_Krzysiek\Semestr4\Platformy technologiczne\C#\lab1\lab1\bin\Debug\lab1.exe.config
+D:\Studia_Krzysiek\Semestr4\Platformy technologiczne\C#\lab1\lab1\bin\Debug\lab1.exe
+D:\Studia_Krzysiek\Semestr4\Platformy technologiczne\C#\lab1\lab1\bin\Debug\lab1.pdb
+D:\Studia_Krzysiek\Semestr4\Platformy technologiczne\C#\lab1\lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+D:\Studia_Krzysiek\Semestr4\Platformy technologiczne\C#\lab1\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+D:\Studia_Krzysiek\Semestr4\Platformy technologiczne\C#\lab1\lab1\obj\Debug\lab1.exe
+D:\Studia_Krzysiek\Semestr4\Platformy technologiczne\C#\lab1\lab1\obj\Debug\lab1.pdb
