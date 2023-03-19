@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 using System.IO;
+using System.Xml.Linq;
+
 namespace lab3
 {
     class Program
@@ -31,24 +33,48 @@ namespace lab3
                 });
             var groupedCars = projectedCars.GroupBy(c => c.engineType).OrderBy(g => g.Key);
 
-            foreach(var group in groupedCars)
+            foreach (var group in groupedCars)
             {
                 double avgHppl = group.Average(c => c.hppl);
                 Console.WriteLine($"{group.Key}: {string.Join(", ", group.Select(c => c.hppl))} (avg: {avgHppl})");
             }
-
-        }
-
-        private static void serializacja()
-        {
             var fileName = "CarsCollection.xml";
-
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Car>), new XmlRootAttribute("cars"));
             var currentDirectory = Directory.GetCurrentDirectory();
             var filePath = Path.Combine(currentDirectory, fileName);
+            serialize(filePath);
+            deserialize(filePath);
+
+
+        }
+        private static void LinqSerialization()
+        {
+            IEnumerable<XElement> nodes = myCars
+                .Select(n =>
+                new XElement("car",
+                    new XElement("model", n.Model),
+                    new XElement("engine",
+                        new XAttribute("model", n.Motor.Model),
+                        new XElement("displacement", n.Motor.Displacement),
+                        new XElement("horsePower", n.Motor.Horsepower)),
+                    new XElement("year", n.Year)));
+            XElement rootNode = new XElement("cars", nodes);
+            rootNode.Save("CarsCollectionLinq.xml");
+        }
+        private static void serialize(String fileName)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Car>), new XmlRootAttribute("cars"));
             using (StreamWriter writer = new StreamWriter(fileName))
             {
                 serializer.Serialize(writer, myCars);
+            }
+        }
+        private static void deserialize(String fileName)
+        {
+            List<Car> list = new List<Car>();
+            XmlSerializer deserializer = new XmlSerializer(typeof(List<Car>), new XmlRootAttribute("cars"));
+            using (Stream reader = new FileStream(fileName, FileMode.Open))
+            {
+                list = (List<Car>)deserializer.Deserialize(reader);
             }
         }
     }

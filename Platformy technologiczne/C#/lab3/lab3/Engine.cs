@@ -16,6 +16,10 @@ namespace lab3
             Horsepower = horsepower;
             Displacement = displacement;
         }
+        public Engine()
+        {
+
+        }
     }
 
 

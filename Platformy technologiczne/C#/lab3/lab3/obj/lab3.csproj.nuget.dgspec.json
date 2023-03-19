@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Studia_Krzysiek\\Semestr4\\git\\Platformy technologiczne\\C#\\lab3\\lab3\\lab3.csproj": {}
+    "D:\\Studia_Krzysiek\\Semestr4\\4th-semester-Studies\\Platformy technologiczne\\C#\\lab3\\lab3\\lab3.csproj": {}
   },
   "projects": {
-    "D:\\Studia_Krzysiek\\Semestr4\\git\\Platformy technologiczne\\C#\\lab3\\lab3\\lab3.csproj": {
+    "D:\\Studia_Krzysiek\\Semestr4\\4th-semester-Studies\\Platformy technologiczne\\C#\\lab3\\lab3\\lab3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Studia_Krzysiek\\Semestr4\\git\\Platformy technologiczne\\C#\\lab3\\lab3\\lab3.csproj",
+        "projectUniqueName": "D:\\Studia_Krzysiek\\Semestr4\\4th-semester-Studies\\Platformy technologiczne\\C#\\lab3\\lab3\\lab3.csproj",
         "projectName": "lab3",
-        "projectPath": "D:\\Studia_Krzysiek\\Semestr4\\git\\Platformy technologiczne\\C#\\lab3\\lab3\\lab3.csproj",
+        "projectPath": "D:\\Studia_Krzysiek\\Semestr4\\4th-semester-Studies\\Platformy technologiczne\\C#\\lab3\\lab3\\lab3.csproj",
         "packagesPath": "C:\\Users\\krzys\\.nuget\\packages\\",
-        "outputPath": "D:\\Studia_Krzysiek\\Semestr4\\git\\Platformy technologiczne\\C#\\lab3\\lab3\\obj\\",
+        "outputPath": "D:\\Studia_Krzysiek\\Semestr4\\4th-semester-Studies\\Platformy technologiczne\\C#\\lab3\\lab3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\krzys\\AppData\\Roaming\\NuGet\\NuGet.Config",
