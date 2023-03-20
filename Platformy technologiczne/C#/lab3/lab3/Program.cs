@@ -4,6 +4,7 @@ using System.Linq;
 using System.Xml.Serialization;
 using System.IO;
 using System.Xml.Linq;
+using System.Xml.XPath;
 
 namespace lab3
 {
@@ -75,6 +76,29 @@ namespace lab3
             using (Stream reader = new FileStream(fileName, FileMode.Open))
             {
                 list = (List<Car>)deserializer.Deserialize(reader);
+            }
+        }
+
+        private static void XPathStatements()
+        {
+            XElement rootNode = XElement.Load("CarsCollection.xml");
+            var countAvarageXPath = "sum(//car/engine[@model!=\"TDI\"]/horsePower) div count(//car/engine[@model!=\"TDI\"]/horsePower)";
+            Console.WriteLine($"Średnia: {(double)rootNode.XPathEvaluate(countAvarageXPath)}");
+
+
+            var notduplice = "//car/model[not(. = preceding::car/model)]";
+            var removeDuplicatesXPath = "//car[following-sibling::car/model = model]";
+            IEnumerable<XElement> models = rootNode.XPathSelectElements(removeDuplicatesXPath);
+
+            var fileName = "CarsCollectionNoRepeats.xml";
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var filePath = Path.Combine(currentDirectory, fileName);
+            using (var writer = new StreamWriter(filePath))
+            {
+                foreach (var model in models)
+                {
+                    writer.WriteLine(model);
+                }
             }
         }
     }
