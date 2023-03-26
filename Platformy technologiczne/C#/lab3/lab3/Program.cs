@@ -25,13 +25,35 @@ namespace lab3
         static void Main(string[] args)
         {
 
+            first();
+            var fileName = "CarsCollection.xml";
+            serialize(fileName);
+            foreach (var x in myCars)
+            {
+                Console.WriteLine($"Year: {x.Year}, Motor Model: {x.Motor.Model}, Horsepower: {x.Motor.Horsepower}, Displacement: {x.Motor.Displacement}");
+            }
+            myCars = deserialize(fileName);
+
+            Console.WriteLine();
+            Console.WriteLine();
+            foreach (var x in myCars)
+            {
+                Console.WriteLine($"Year: {x.Year}, Motor Model: {x.Motor.Model}, Horsepower: {x.Motor.Horsepower}, Displacement: {x.Motor.Displacement}");
+            }
+            Xpath(fileName);
+            LinqSerialization();
+            MyCarsToXHTMLTable();
+            ModifyCarsCollectionXML();
+        }
+        private static void first()
+        {
             var projectedCars = myCars
-                .Where(c => c.Model == "A6")
-                .Select(c => new
-                {
-                    engineType = c.Motor.Model == "TDI" ? "diesel" : "petrol",
-                    hppl = (double)c.Motor.Horsepower / c.Motor.Displacement
-                });
+            .Where(c => c.Model == "A6")
+            .Select(c => new
+            {
+                engineType = c.Motor.Model == "TDI" ? "diesel" : "petrol",
+                hppl = (double)c.Motor.Horsepower / c.Motor.Displacement
+            });
             var groupedCars = projectedCars.GroupBy(c => c.engineType).OrderBy(g => g.Key);
 
             foreach (var group in groupedCars)
@@ -39,13 +61,40 @@ namespace lab3
                 double avgHppl = group.Average(c => c.hppl);
                 Console.WriteLine($"{group.Key}: {string.Join(", ", group.Select(c => c.hppl))} (avg: {avgHppl})");
             }
-            var fileName = "CarsCollection.xml";
+        }
+        private static void serialize(String fileName)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Car>), new XmlRootAttribute("cars"));
             var currentDirectory = Directory.GetCurrentDirectory();
             var filePath = Path.Combine(currentDirectory, fileName);
-            serialize(filePath);
-            deserialize(filePath);
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                serializer.Serialize(writer, myCars);
+            }
+        }
+        private static List<Car> deserialize(String fileName)
+        {
+            List<Car> list;
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Car>), new XmlRootAttribute("cars"));
+            using (Stream reader = new FileStream(fileName, FileMode.Open))
+            {
+                list = (List<Car>)serializer.Deserialize(reader);
+            }
+            return list;
+        }
+        private static void Xpath(String fileName)
+        {
+            XElement rootNode = XElement.Load(fileName);
+            var countAvarageXPath = "sum(//car/engine[@Model!=\"TDI\"]/Horsepower) div count(//car/engine[@Model!=\"TDI\"]/Horsepower)";
+            Console.WriteLine($"a: {(double)rootNode.XPathEvaluate(countAvarageXPath)}");
 
+            var notduplice = "//car/engine[@Model and not(@Model = preceding::car/engine/@Model)]";
+            IEnumerable<XElement> models = rootNode.XPathSelectElements(notduplice);
 
+            foreach(var model in models)
+            {
+                Console.WriteLine(model.Attribute("Model").Value);
+            }
         }
         private static void LinqSerialization()
         {
@@ -61,45 +110,61 @@ namespace lab3
             XElement rootNode = new XElement("cars", nodes);
             rootNode.Save("CarsCollectionLinq.xml");
         }
-        private static void serialize(String fileName)
+        private static void MyCarsToXHTMLTable()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Car>), new XmlRootAttribute("cars"));
-            using (StreamWriter writer = new StreamWriter(fileName))
-            {
-                serializer.Serialize(writer, myCars);
-            }
+            IEnumerable<XElement> rows =
+                from car in myCars
+                select new XElement("tr",
+                    new XAttribute("style", "border: 2px solid black"),
+                    new XElement("td", new XAttribute("style", "border: 2px double black"), car.Model),
+                    new XElement("td", new XAttribute("style", "border: 2px double black"), car.Motor.Model),
+                    new XElement("td", new XAttribute("style", "border: 2px double black"), car.Motor.Displacement),
+                    new XElement("td", new XAttribute("style", "border: 2px double black"), car.Motor.Horsepower),
+                    new XElement("td", new XAttribute("style", "border: 2px double black"), car.Year)
+                );
+
+            XElement table = new XElement("table",
+                new XAttribute("style", "border: 2px double black"),
+                rows
+            );
+
+            XElement template = XElement.Load("template.html");
+            XElement body = template.Element("{http://www.w3.org/1999/xhtml}body");
+            body.Add(table);
+            template.Save("templateDone.html");
+
         }
-        private static void deserialize(String fileName)
+
+        private static void ModifyCarsCollectionXML()
         {
-            List<Car> list = new List<Car>();
-            XmlSerializer deserializer = new XmlSerializer(typeof(List<Car>), new XmlRootAttribute("cars"));
-            using (Stream reader = new FileStream(fileName, FileMode.Open))
+            XDocument doc = XDocument.Load("CarsCollection.xml");
+
+            foreach (XElement car in doc.Root.Elements())
             {
-                list = (List<Car>)deserializer.Deserialize(reader);
-            }
-        }
-
-        private static void XPathStatements()
-        {
-            XElement rootNode = XElement.Load("CarsCollection.xml");
-            var countAvarageXPath = "sum(//car/engine[@model!=\"TDI\"]/horsePower) div count(//car/engine[@model!=\"TDI\"]/horsePower)";
-            Console.WriteLine($"Średnia: {(double)rootNode.XPathEvaluate(countAvarageXPath)}");
-
-
-            var notduplice = "//car/model[not(. = preceding::car/model)]";
-            var removeDuplicatesXPath = "//car[following-sibling::car/model = model]";
-            IEnumerable<XElement> models = rootNode.XPathSelectElements(removeDuplicatesXPath);
-
-            var fileName = "CarsCollectionNoRepeats.xml";
-            var currentDirectory = Directory.GetCurrentDirectory();
-            var filePath = Path.Combine(currentDirectory, fileName);
-            using (var writer = new StreamWriter(filePath))
-            {
-                foreach (var model in models)
+                foreach (XElement field in car.Elements())
                 {
-                    writer.WriteLine(model);
+                    if (field.Name == "engine")
+                    {
+                        foreach (XElement engineElement in field.Elements())
+                        {
+                            if (engineElement.Name == "Horsepower")
+                            {
+                                engineElement.Name = "hp";
+                            }
+                        }
+                    }
+                    else if (field.Name == "Model")
+                    {
+                        var yearField = car.Element("Year");
+                        XAttribute attribute = new XAttribute("Year", yearField.Value);
+                        field.Add(attribute);
+                        yearField.Remove();
+                    }
                 }
             }
+
+            doc.Save("CarsCollectionModified.xml");
         }
+
     }
 }

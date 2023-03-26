@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
+
 namespace lab3
 {
     [XmlType("car")]
     public class Car
     {
-        [System.Xml.Serialization.XmlIgnore]
         public string Model { get; set; }
         [XmlElement(ElementName = "engine")]
         public Engine Motor { get; set; }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+  <car>
+    <engine>
+      <model>CGI</model>
+      <horsePower>204</horsePower>
+      <displacement>1.8</displacement>
+    </engine>
+    <year>2009</year>
+  </car>
+  <car>
+    <engine>
+      <model>CGI</model>
+      <horsePower>292</horsePower>
+      <displacement>3.5</displacement>
+    </engine>
+    <year>2009</year>
+  </car>
+</cars>

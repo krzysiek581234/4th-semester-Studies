@@ -12,17 +12,3 @@ D:\Studia_Krzysiek\Semestr4\git\Platformy technologiczne\C#\lab3\lab3\obj\Debug\
 D:\Studia_Krzysiek\Semestr4\git\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.dll
 D:\Studia_Krzysiek\Semestr4\git\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.pdb
 D:\Studia_Krzysiek\Semestr4\git\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.genruntimeconfig.cache
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\bin\Debug\netcoreapp3.1\lab3.exe
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\bin\Debug\netcoreapp3.1\lab3.deps.json
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\bin\Debug\netcoreapp3.1\lab3.runtimeconfig.json
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\bin\Debug\netcoreapp3.1\lab3.runtimeconfig.dev.json
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\bin\Debug\netcoreapp3.1\lab3.dll
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\bin\Debug\netcoreapp3.1\lab3.pdb
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.csproj.AssemblyReference.cache
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.GeneratedMSBuildEditorConfig.editorconfig
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.AssemblyInfoInputs.cache
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.AssemblyInfo.cs
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.csproj.CoreCompileInputs.cache
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.dll
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.pdb
-D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab3\lab3\obj\Debug\netcoreapp3.1\lab3.genruntimeconfig.cache

@@ -1,0 +1,8 @@
+﻿  lab2.cpp
+D:\Studia_Krzysiek\Semestr4\git\metody probabylistyczne\lab2\lab2\lab2.cpp(6,27): warning C4244: "inicjowanie": konwersja z "double" do "unsigned int", możliwa utrata danych
+D:\Studia_Krzysiek\Semestr4\git\metody probabylistyczne\lab2\lab2\lab2.cpp(6,22): warning C4244: "inicjowanie": konwersja z "double" do "const unsigned int", możliwa utrata danych
+D:\Studia_Krzysiek\Semestr4\git\metody probabylistyczne\lab2\lab2\lab2.cpp(58,24): warning C4244: "argument": konwersja z "__int64" do "unsigned int", możliwa utrata danych
+D:\Studia_Krzysiek\Semestr4\git\metody probabylistyczne\lab2\lab2\lab2.cpp(58,23): warning C4244: "=": konwersja z "__int64" do "int", możliwa utrata danych
+D:\Studia_Krzysiek\Semestr4\git\metody probabylistyczne\lab2\lab2\lab2.cpp(60,19): warning C4244: "inicjowanie": konwersja z "__int64" do "int", możliwa utrata danych
+D:\Studia_Krzysiek\Semestr4\git\metody probabylistyczne\lab2\lab2\lab2.cpp(31): warning C4715: "Xor”: niewszystkie ścieżki kodu zwracają wartość
+  lab2.vcxproj -> D:\Studia_Krzysiek\Semestr4\git\metody probabylistyczne\lab2\Debug\lab2.exe

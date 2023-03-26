@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
+
 namespace lab3
 {
+    [XmlRoot(ElementName ="engine")]
     public class Engine
     {
+        [XmlAttribute]
         public string Model { get; set; }
         public double Horsepower { get; set; }
         public double Displacement { get; set; }
@@ -18,7 +21,6 @@ namespace lab3
         }
         public Engine()
         {
-
         }
     }
 
