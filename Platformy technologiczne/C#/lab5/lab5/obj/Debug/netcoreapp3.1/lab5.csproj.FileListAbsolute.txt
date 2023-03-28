@@ -1,0 +1,14 @@
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\obj\Debug\netcoreapp3.1\lab5.csproj.AssemblyReference.cache
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\obj\Debug\netcoreapp3.1\lab5.GeneratedMSBuildEditorConfig.editorconfig
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\obj\Debug\netcoreapp3.1\lab5.AssemblyInfoInputs.cache
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\obj\Debug\netcoreapp3.1\lab5.AssemblyInfo.cs
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\obj\Debug\netcoreapp3.1\lab5.csproj.CoreCompileInputs.cache
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\bin\Debug\netcoreapp3.1\lab5.exe
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\bin\Debug\netcoreapp3.1\lab5.deps.json
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\bin\Debug\netcoreapp3.1\lab5.runtimeconfig.json
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\bin\Debug\netcoreapp3.1\lab5.runtimeconfig.dev.json
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\bin\Debug\netcoreapp3.1\lab5.dll
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\bin\Debug\netcoreapp3.1\lab5.pdb
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\obj\Debug\netcoreapp3.1\lab5.dll
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\obj\Debug\netcoreapp3.1\lab5.pdb
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\Platformy technologiczne\C#\lab5\lab5\obj\Debug\netcoreapp3.1\lab5.genruntimeconfig.cache
