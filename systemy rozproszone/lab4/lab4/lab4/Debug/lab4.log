@@ -1,0 +1,4 @@
+﻿  main.cpp
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\systemy rozproszone\lab4\lab4\lab4\main.cpp(6,10): warning C4068: nieznana pragma „argsused”
+D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\systemy rozproszone\lab4\lab4\lab4\main.cpp(33,9): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
+  lab4.vcxproj -> D:\Studia_Krzysiek\Semestr4\4th-semester-Studies\systemy rozproszone\lab4\lab4\Debug\lab4.exe
