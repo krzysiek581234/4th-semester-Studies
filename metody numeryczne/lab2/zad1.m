@@ -10,7 +10,7 @@ axis ([0 a 0 a])
 x = [];
 y = [];
 r = [];
-size = [];
+sizee = [];
 howmanytimestab = [];
 while (n < n_max)
     howmanytimes = 0;
@@ -45,15 +45,16 @@ while (n < n_max)
     x(end+1) = [xtemp];
     y(end+1) = [ytemp];
     r(end+1) = [rtemp];
-    howmanytimestab(end+1) = [howmanytimes];
-    size(end+1) = power(rtemp,2) * pi;
+
+    howmanytimestab(end+1) = howmanytimes;
+
+    sizee(end+1) = power(rtemp,2) * pi;
     n = n + 1;
     pause(0.01);
 end
 
-
 figure('Name', 'Zajętość planszy');
-procent_zajetosci = cumsum(size);
+procent_zajetosci = cumsum(sizee);
 plot(1:n, procent_zajetosci);
 x = power(a,2);
 ylim([0 x]);
@@ -63,7 +64,11 @@ title('Zajętość planszy w zależności od kolejno dodawanych figurek');
 print -dpng zadanie1a
 
 figure('Name', 'Zajętość planszy');
+srednia_los = [];
 srednia_los = cumsum(howmanytimestab);
+for i = 1:n
+    srednia_los(i) = srednia_los(i)/i;
+end
 plot(1:n, srednia_los);
 xlabel('Liczba narysowanych okręgów');
 ylabel('Liczba losowań');
