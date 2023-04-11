@@ -1,0 +1,5 @@
+3 -napisz min max wygrywa z randomowym botem
+4 - napisz alfe beta i działa szybciej niż min max
+5 - dołożyć punktacje (na środku tablicy masz pionki) wyjście z min max alfa beta
+
+

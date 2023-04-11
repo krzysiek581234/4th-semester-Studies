@@ -1,4 +1,0 @@
-a) Która z trzech zbadanych metod okazała się najszybsza? 
-Najszybszą metodą okazała się metoda Gaussa–Seidla przy małych macierza różnica nie była znacząca jednakże przy macierzy o wielkości 12000x12000 różnica wyniosła 2.5 krotności czasu wykonania.
-b) Która metoda iteracyjna potrzebuje mniejszej liczby iteracji, żeby zbiec się do prawidłowego wyniku?
-Metoda Gaussa–Seidla jest lepsza i musi wykonać około 2 krotnie mniej operacji, żeby zbiec się do prawidłowego wyniku.

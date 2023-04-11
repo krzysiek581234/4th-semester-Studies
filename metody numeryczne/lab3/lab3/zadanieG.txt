@@ -1,0 +1,2 @@
+ Jaka jest norma błędu rezydualnego dla każdego sposobu rozwiązania równania macierzowego?
+ Czy metody iteracyjne zbiegają się? - Nie norma błędu rezydualnego nie zbiegaja się, rosną zarówno przy metodzie Gaussa Seidla jak  i Jacobiego. Z tego powodu są nieskuteczne przy rozwiązywaniu tego układu równań. 
