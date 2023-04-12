@@ -21,10 +21,10 @@ class MinMaxA:
             if XBest < eva:
                 XBest = eva
                 pos = x
-        return connect4.possible_drops()[pos-1]
+        return pos
 
     def minmax(self,connect4, depth, czyMax):
-        if(depth == 5):
+        if(depth == 3):
             return 0
         stan = self.evaluate(connect4)
         if stan != 2:
