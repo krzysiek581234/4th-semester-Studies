@@ -30,13 +30,10 @@ class Connect4:
         self.who_moves = 'o' if self.who_moves == 'x' else 'x'
 
     def undo_drop_token(self, n_column):
-        if self.board[0][n_column] == '_':
-            raise GameplayException('no token to remove')
-
         n_row = self.height - 1
-        while n_row >= 0 and self.board[n_row][n_column] == '_':
+        while n_row >= 0 and self.board[n_row][n_column] != '_':
             n_row -= 1
-        self.board[n_row][n_column] = '_'
+        self.board[n_row+1][n_column] = '_'
         self.who_moves = 'o' if self.who_moves == 'x' else 'x'
         self.game_over = False
 
@@ -83,4 +80,13 @@ class Connect4:
         else:
             print('now moves:', self.who_moves)
             print('possible drops:', self.possible_drops())
+
+    def collect_token(self, n_column):
+        n_row = self.height - 1
+        while n_row >= 0 and self.board[n_row][n_column] != '_':
+            n_row -= 1
+        self.board[n_row + 1][n_column] = '_'
+        self.game_over = False
+        self.wins = None
+        self.who_moves = 'o' if self.who_moves == 'x' else 'x'
 

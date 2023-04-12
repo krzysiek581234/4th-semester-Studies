@@ -10,6 +10,7 @@ while not connect4.game_over:
     try:
         if connect4.who_moves == agent.my_token:
             n_column = agent.decide(connect4)
+            print(n_column)
         else:
             n_column = int(input(':'))
         connect4.drop_token(n_column)
