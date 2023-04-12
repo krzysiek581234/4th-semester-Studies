@@ -1,7 +1,7 @@
 from exceptions import GameplayException
 from connect4 import Connect4
 from randomagent import RandomAgent
-from minmaxagent import MinMaxAgent
+from minmaxagent import MinMaxA
 from alphabetaagent import AlphaBetaAgent
 
 connect4 = Connect4(width=7, height=6)
