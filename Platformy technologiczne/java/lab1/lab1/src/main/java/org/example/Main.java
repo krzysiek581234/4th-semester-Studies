@@ -52,12 +52,29 @@ public class Main {
         {
             int count = policzDzieci(m, 0);
             statistics.put(m, count);
+            if(m.getSet() != null)
+            {
+                generate(statistics, m);
+            }
         }
         return statistics;
+    }
+    public static void generate(Map<Mage, Integer> statistics, Mage m)
+    {
+        for (Mage b : m.getSet())
+        {
+            int count = policzDzieci(b, 0);
+            statistics.put(b, count);
+            if(b.getSet() != null)
+            {
+                generate(statistics, b);
+            }
+        }
     }
     public static void main(String[] args)
     {
         Set<Mage> zbior, zbior2, zbior3;
+
         if(args[0].equals("brak"))
         {
             zbior = new HashSet<Mage>();
@@ -88,27 +105,33 @@ public class Main {
 
         Mage mag11 = new Mage("X", 71, 800.0, null);
         Mage mag12 = new Mage("X", 70, 801.0, null);
-        zbior.add(mag11);
-        zbior.add(mag12);
 
-        zbior.add(mag1);
-        zbior.add(mag2);
-        zbior.add(mag3);
-        zbior.add(mag4);
-        zbior.add(mag5);
-        zbior.add(mag6);
-        zbior3.add(mag7);
-        zbior2.add(mag8);
-        zbior2.add(mag9);
-        zbior3.add(mag10);
+        mag11.addMag(mag12,"brak");
 
-        Mage master = new Mage("Dumbledore", 50, 100.0,  zbior3);
+        mag4.addMag(mag1,args[0]);
+        mag4.addMag(mag2,args[0]);
+        mag4.addMag(mag3,args[0]);
+
+        mag5.addMag(mag4, args[0]);
+        mag6.addMag(mag5,args[0]);
+
+        mag7.addMag(mag6,args[0]);
+        mag7.addMag(mag11,args[0]);
+
+        zbior.add(mag7);
+
 
         System.out.println("Zawartość zbioru:");
-        printSet(zbior3,0);
-        System.out.println(policzDzieci(mag10,0));
-        Map<Mage, Integer> test = generate(zbior2, args[0]);
-        System.out.println(test);
+        printSet(zbior,0);
+        //System.out.println(policzDzieci(mag10,0));
+        Map<Mage, Integer> test = generate(zbior, args[0]);
+        System.out.println();
+        for (Map.Entry<Mage, Integer> entry : test.entrySet())
+        {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+        //dodawanie potomków
+        //wypisywanie apy rekurencyjnie
     }
 
 }

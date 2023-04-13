@@ -1,7 +1,9 @@
 package org.example;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TreeSet;
 
 
 public class Mage implements Comparable<Mage> {
@@ -37,6 +39,27 @@ public class Mage implements Comparable<Mage> {
     public Set<Mage> getApprentices() {
         return apprentices;
     }
+    public void addMag(Mage a,String type)
+    {
+        if(this.apprentices == null)
+        {
+            if(type.equals("brak"))
+            {
+                this.apprentices = new HashSet<Mage>();
+
+            }
+            else if(type.equals("natural"))
+            {
+                this.apprentices = new TreeSet<Mage>();
+
+            }
+            else
+            {
+                this.apprentices = new TreeSet<Mage>(new MageCom());
+            }
+        }
+        apprentices.add(a);
+    }
     public boolean equals(Mage a)
     {
         if(this.name==a.name && this.level==a.level && this.power == a.power && Objects.equals(this.apprentices, a.apprentices))
@@ -46,7 +69,7 @@ public class Mage implements Comparable<Mage> {
     }
     public int hashCode()
     {
-        return Objects.hash(this.name, this.level);
+        return Objects.hash(this.name, this.level, this.power);
     }
     @Override
     public String toString()

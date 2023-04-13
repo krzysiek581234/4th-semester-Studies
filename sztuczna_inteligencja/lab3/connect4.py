@@ -2,7 +2,7 @@ from exceptions import GameplayException
 
 
 class Connect4:
-    def __init__(self, width=5, height=4):
+    def __init__(self, width=4, height=4):
         self.width = width
         self.height = height
         self.who_moves = 'o'
@@ -10,7 +10,14 @@ class Connect4:
         self.wins = None
         self.board = []
         for n_row in range(self.height):
-            self.board.append(['_' for _ in range(self.width)])
+           self.board.append(['_' for _ in range(self.width)])
+        # self.board = [
+        #     ['o', '_', '_', '_'],
+        #     ['x', 'o', '_', 'x'],
+        #     ['o', 'o', '_', 'x'],
+        #     ['o', 'x', 'x', 'x']
+        # ]
+
 
     def possible_drops(self):
         return [n_column for n_column in range(self.width) if self.board[0][n_column] == '_']

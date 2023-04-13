@@ -5,8 +5,8 @@ from minmaxagent import MinMaxA
 from alphabetaagent import AlphaBetaAgent
 
 connect4 = Connect4(width=4, height=4)
-agent1 = RandomAgent('o')
-agent2 = MinMaxA('x')
+agent1 = RandomAgent('x')
+agent2 = MinMaxA('o')
 while not connect4.game_over:
     connect4.draw()
     try:

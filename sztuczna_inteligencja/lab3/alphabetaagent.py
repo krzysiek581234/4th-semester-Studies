@@ -5,60 +5,66 @@ inf = 10000000
 class AlphaBetaAgent:
     def __init__(self, my_token='o'):
         self.my_token = my_token
+        self.opositetoken = ' '
+        if (my_token == 'o'):
+            self.opositetoken = 'x'
+        else:
+            self.opositetoken = 'o'
 
     def decide(self, connect4):
         if connect4.who_moves != self.my_token:
             raise AgentException('not my round')
 
-        best = connect4.possible_drops()[0]
-        connect4.drop_token(best)
-        stanBest = self.minmax(connect4, False,10000000, -10000000,  0)
-        connect4.collect_token(best)
+        pos = connect4.possible_drops()[0]
+        connect4.drop_token(pos)
+        XBest = self.minmax(connect4, False, 10, -10, 0)
+        connect4.collect_token(pos)
 
-        for i in connect4.possible_drops():
-            connect4.drop_token(i)
-            stanI = self.minmax(connect4, False,10000000, -10000000,  0)
-            connect4.collect_token(i)
-            if stanI > stanBest:
-                stanBest = stanI
-                best = i
-        return connect4.possible_drops()[best-1]
+        for x in connect4.possible_drops():
+            connect4.drop_token(x)
+            eva = self.minmax(connect4, False, -10,10, 0)
+            connect4.undo_drop_token(x)
+            if XBest < eva:
+                XBest = eva
+                pos = x
+        return pos
 
-    def minmax(self, connect4, czy_max, alfa, beta, depth):
-        if depth == 5:
+    def minmax(self,connect4, czyMax,alfa, beta, depth):
+        if(depth == 7):
             return 0
         stan = self.evaluate(connect4)
         if stan != 2:
             return stan
-        
-        if czy_max:
-            opt = -10000000
-            for i in connect4.possible_drops():
-                connect4.drop_token(i)
-                move = self.minmax(connect4, ~czy_max, alfa, beta, depth+1)
-                opt = max(opt, move)
-                connect4.collect_token(i)
-                alfa = max(alfa, opt)
-                if alfa >= beta:
-                    return alfa
         else:
-            opt = 10000000
-            for i in connect4.possible_drops():
-                connect4.drop_token(i)
-                move = self.minmax(connect4, ~czy_max,alfa, beta,  depth+1)
-                opt = min(opt, move)
-                connect4.collect_token(i)
-                beta = min(beta, opt)
-                if alfa >= beta:
-                    return beta
-        return opt
+            if czyMax:
+                opt = -10
+                for y in connect4.possible_drops():
+                    connect4.drop_token(y)
+                    eva = self.minmax(connect4, not czyMax, -10,10, depth+1)
+                    opt = max(eva, opt)
+                    connect4.undo_drop_token(y)
+                    alfa = max(alfa, opt)
+                    if alfa >= beta:
+                        return alfa
+            else:
+                opt = 10
+                for y in connect4.possible_drops():
+                    connect4.drop_token(y)
+                    eva = self.minmax(connect4, not czyMax, -10,10, depth+1)
+                    opt = min(eva, opt)
+                    connect4.undo_drop_token(y)
+                    beta = min(beta, opt)
+                    if alfa >= beta:
+                        return beta
+            return opt
+
 
     def evaluate(self, connect4):
         if not connect4.possible_drops():
             return 0
         for four in connect4.iter_fours():
-            if four == ['o', 'o', 'o', 'o']:
+            if four == [self.my_token, self.my_token, self.my_token, self.my_token]:
                 return 1
-            elif four == ['x', 'x', 'x', 'x']:
+            elif four == [self.opositetoken, self.opositetoken, self.opositetoken, self.opositetoken]:
                 return -1
         return 2
