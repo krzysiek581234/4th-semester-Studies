@@ -1,0 +1,99 @@
+
+class City 
+{
+    var id: Int
+    var name: String
+    var description: String
+    var latitude : Int
+    var longitude : Int
+    var keywords : Array<String>
+    var locations : Array<attractions>
+    
+    init(id:Int,name:String,description:String,latitude:Int,longitude:Int,keywords:Array<String>,locations:Array<attractions>)                                                   
+    {
+        self.id = id
+        self.name =  name
+        self.description =  description
+        self.latitude = latitude
+        self.longitude = longitude
+        self.keywords = keywords
+        self.locations =  locations
+    }
+    func printCityDetails() {
+        print("ID: \(self.id)")
+        print("Name: \(self.name)")
+        print("description: \(self.description)")
+        print("latitude: \(self.latitude)")
+        print("longitude: \(self.longitude)")
+        for key in keywords
+        {
+            print("keywords: \(key)")
+        }
+        for attrection in locations
+        {
+            attrection.printAttractionDetails()
+        }
+    }
+}
+enum Rating: Int {
+    case Wonderful = 5
+    case Great = 4
+    case OK = 3
+    case Lame = 2
+    case Awful = 1
+}
+enum Price: Int
+{
+    case expensive = 3
+    case medium = 2
+    case cheap = 1
+}
+enum Typ: Int
+{
+    case seaside = 5
+    case party = 4
+    case sport = 3
+    case music = 2
+    case nature = 1 
+}
+
+class attractions
+{
+    var rating: Rating
+    var price: Price
+    var type: Typ
+    var address: String
+    var name: String
+    var id : Int
+	init(rating: Rating, price: Price, type: Typ, address:String, name:String, id:Int)
+	{
+	    self.rating = rating
+	    self.price = price
+	    self.type = type
+	    self.address = address
+	    self.name = name
+		self.id  = id
+	}
+    func printAttractionDetails() {
+        print("Name: \(self.name)")
+        print("Address: \(self.address)")
+        print("ID: \(self.id)")
+        print("Rating: \(self.rating.rawValue)")
+        print("Price: \(self.price.rawValue)")
+        print("Type: \(self.type.rawValue)")
+    }
+}
+
+var ListOfCities : Array<City> = []
+
+var GdanskCity : Array<attractions> = []
+var GdanskKeywords: Array<String> = ["WW2","Danzig","Assasination","Solodarity","Teutonic Order","Gdansk Univerity of Technology","Amber Gold","ZSŁ","Walesa"]
+var GdanskDescription: String = "Only free city in the world"
+GdanskCity.append(attractions(rating:Rating.OK, price:Price.expensive, type:Typ.seaside, address:"potokowa 2", name:"Port w Gdyni", id:1))
+ListOfCities.append(City(id:0,name:"Gdańsk",description:GdanskDescription,latitude:54,longitude:18,keywords: GdanskKeywords,locations:GdanskCity))
+for city in ListOfCities
+{
+    city.printCityDetails();
+}
+
+
