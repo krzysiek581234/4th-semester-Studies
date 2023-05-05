@@ -1,15 +1,14 @@
-
 class City 
 {
     var id: Int
     var name: String
     var description: String
-    var latitude : Int
-    var longitude : Int
+    var latitude : Double
+    var longitude : Double
     var keywords : Array<String>
     var locations : Array<attractions>
     
-    init(id:Int,name:String,description:String,latitude:Int,longitude:Int,keywords:Array<String>,locations:Array<attractions>)                                                   
+    init(id:Int,name:String,description:String,latitude:Double,longitude:Double,keywords:Array<String>,locations:Array<attractions>)                                                   
     {
         self.id = id
         self.name =  name
@@ -20,6 +19,7 @@ class City
         self.locations =  locations
     }
     func printCityDetails() {
+        print("");
         print("ID: \(self.id)")
         print("Name: \(self.name)")
         print("description: \(self.description)")
@@ -50,6 +50,7 @@ enum Price: Int
 }
 enum Typ: Int
 {
+    case restaurant = 6
     case seaside = 5
     case party = 4
     case sport = 3
@@ -83,17 +84,172 @@ class attractions
         print("Type: \(self.type.rawValue)")
     }
 }
+//zad 2
+func searchCitiesByName(name: String) -> [City] {
+    var result: [City] = []
+    for city in ListOfCities {
+        if city.name.lowercased().contains(name.lowercased()) {
+            result.append(city)
+        }
+    }
+    return result
+}
+
+func searchCitiesByKeyword(keyword: String) -> [City] {
+    var result: [City] = []
+    for city in ListOfCities {
+        for kw in city.keywords {
+            if kw.lowercased().contains(keyword.lowercased()) {
+                result.append(city)
+                break
+            }
+        }
+    }
+    return result
+}
+//zad 3
+
+import Foundation
+
+func distanceBetweenCities(city1: City, city2: City) -> Double {
+    let lat1 = Double(city1.latitude)
+    let lon1 = Double(city1.longitude)
+    let lat2 = Double(city2.latitude)
+    let lon2 = Double(city2.longitude)
+    
+    let R = 6371.0 // Średni promień Ziemi w kilometrach
+    // tak kocham fizyke
+    let lat1Rad = lat1 * Double.pi / 180.0
+    let lon1Rad = lon1 * Double.pi / 180.0
+    let lat2Rad = lat2 * Double.pi / 180.0
+    let lon2Rad = lon2 * Double.pi / 180.0
+    
+    let dLat = (lat2Rad - lat1Rad)
+    let dLon = (lon2Rad - lon1Rad)
+    
+    let a = sin(dLat/2) * sin(dLat/2) +
+            cos(lat1Rad) * cos(lat2Rad) *
+            sin(dLon/2) * sin(dLon/2)
+    let c = 2 * atan2(sqrt(a), sqrt(1-a))
+    let distance = R * c
+    
+    return distance
+}
+
+func findClosestAndFarthestCities(userLat: Double, userLon: Double, ListOfCities: Array<City>) -> (City?, City?) {
+    var closestCity: City? = nil
+    var farthestCity: City? = nil
+    var minDistance = Double.greatestFiniteMagnitude
+    var maxDistance = 0.0
+    
+    for city in ListOfCities {
+        let distance = distanceBetweenCities(city1: city, city2: City(id: 0, name: "", description: "", latitude: userLat, longitude: userLon, keywords: [], locations: []))
+        
+        if distance < minDistance {
+            minDistance = distance
+            closestCity = city
+        }
+        
+        if distance > maxDistance {
+            maxDistance = distance
+            farthestCity = city
+        }
+    }
+    
+    return (closestCity, farthestCity)
+}
+
+
 
 var ListOfCities : Array<City> = []
 
-var GdanskCity : Array<attractions> = []
-var GdanskKeywords: Array<String> = ["WW2","Danzig","Assasination","Solodarity","Teutonic Order","Gdansk Univerity of Technology","Amber Gold","ZSŁ","Walesa"]
-var GdanskDescription: String = "Only free city in the world"
-GdanskCity.append(attractions(rating:Rating.OK, price:Price.expensive, type:Typ.seaside, address:"potokowa 2", name:"Port w Gdyni", id:1))
-ListOfCities.append(City(id:0,name:"Gdańsk",description:GdanskDescription,latitude:54,longitude:18,keywords: GdanskKeywords,locations:GdanskCity))
-for city in ListOfCities
+//var GdanskCity : Array<attractions> = []
+//var GdanskKeywords: Array<String> = ["WW2","Danzig","Assasination","Solodarity","Teutonic Order","Gdansk Univerity of Technology","Amber Gold","ZSŁ","Walesa"]
+//var GdanskDescription: String = "Only free city in the world"
+//GdanskCity.append(attractions(rating:Rating.OK, price:Price.expensive, type:Typ.seaside, address:"potokowa 2", name:"Port w Gdyni", id:1))
+//ListOfCities.append(City(id:0,name:"Gdańsk",description:GdanskDescription,latitude:54,longitude:18,keywords: GdanskKeywords,locations:GdanskCity))
+
+
+// Atrakcje w Gdańsku
+var gdanskAttractions = [attractions(rating: .Great, price: .medium, type: .seaside, address: "ul. Długi Targ 1-3", name: "Złota Kamienica", id: 1),
+                         attractions(rating: .OK, price: .cheap, type: .nature, address: "ul. Łąkowa 1", name: "Park Oliwski", id: 2),
+                         attractions(rating: .Wonderful, price: .expensive, type: .sport, address: "ul. Pokoleń Lechii Gdańsk 1", name: "Stadion Energa Gdańsk", id: 3)]
+
+// Atrakcje w Warszawie
+var warsawAttractions = [attractions(rating: .Great, price: .medium, type: .party, address: "ul. Mazowiecka 12", name: "Klub Platinium", id: 1),
+                         attractions(rating: .Wonderful, price: .expensive, type: .music, address: "ul. Świętokrzyska 18", name: "Teatr Wielki - Opera Narodowa", id: 2),
+                         attractions(rating: .OK, price: .cheap, type: .sport, address: "ul. Wybrzeże Gdyńskie 4", name: "Stadion Narodowy", id: 3)]
+
+// Atrakcje w Krakowie
+var krakowAttractions = [attractions(rating: .Wonderful, price: .expensive, type: .nature, address: "ul. Kamedulska 10", name: "Ogród Botaniczny", id: 1),
+                         attractions(rating: .Great, price: .medium, type: .sport, address: "ul. Reymonta 22", name: "Hala Widowiskowo-Sportowa Tauron Arena Kraków", id: 2),
+                         attractions(rating: .OK, price: .cheap, type: .party, address: "ul. Sławkowska 14", name: "Klub Frantic", id: 3)]
+                         
+var restaurantAttractions = [attractions(rating: .Great, price: .medium, type: .seaside, address: "ul. Długi Targ 1-3", name: "Złota Kamienica", id: 1),
+                         attractions(rating: .OK, price: .cheap, type: .nature, address: "ul. Łąkowa 1", name: "Park Oliwski", id: 2),
+                         attractions(rating: .Wonderful, price: .expensive, type: .sport, address: "ul. Pokoleń Lechii Gdańsk 1", name: "Stadion Energa Gdańsk", id: 3),
+                         attractions(rating: .Great, price: .medium, type: .restaurant, address: "ul. Długa 46/47", name: "Piwna 47", id: 4),
+                         attractions(rating: .Wonderful, price: .expensive, type: .restaurant, address: "ul. Szeroka 38", name: "Restauracja Kubicki", id: 5),
+                         attractions(rating: .OK, price: .cheap, type: .restaurant, address: "ul. Długa 1", name: "Bar Pod Rybą", id: 6),
+                         attractions(rating: .Great, price: .medium, type: .restaurant, address: "ul. Mariacka 36", name: "W Starym Kinie", id: 7),
+                         attractions(rating: .Wonderful, price: .expensive, type: .restaurant, address: "ul. Świętego Ducha 2", name: "Villa Trompenberg", id: 8),
+                         attractions(rating: .OK, price: .cheap, type: .restaurant, address: "ul. Długi Targ 32-33", name: "Fiesta", id: 9),
+                         attractions(rating: .Great, price: .medium, type: .restaurant, address: "ul. Długi Targ 27/29", name: "Café Ferber", id: 10)]
+
+
+ListOfCities.append(City(id: 1, name: "Gdańsk", description: "The historic city of Gdańsk", latitude: 54.3721581, longitude: 18.6383065, keywords: ["history", "architecture", "Baltic Sea"], locations: [gdanskAttractions[0], gdanskAttractions[1], gdanskAttractions[2]]))
+ListOfCities.append(City(id: 2, name: "Warszawa", description: "The capital city of Poland", latitude: 52.2297708, longitude: 21.0117809, keywords: ["history", "culture", "Capital"], locations: [warsawAttractions[0], warsawAttractions[1], warsawAttractions[2]]))
+ListOfCities.append(City(id: 3, name: "Kraków", description: "The historic city of Kraków", latitude: 50.0646501, longitude: 19.9449799, keywords: ["history", "culture", "food"], locations: [krakowAttractions[0], krakowAttractions[1], krakowAttractions[2]]))
+ListOfCities.append(City(id: 4, name: "Poznań", description: "The city of St. Martin's croissants", latitude: 52.406374, longitude: 16.9251681, keywords: ["history", "food", "culture"], locations: [restaurantAttractions[0]]))
+ListOfCities.append(City(id: 5, name: "Wrocław", description: "The city of a hundred bridges", latitude: 51.107883, longitude: 17.038538, keywords: ["history", "culture", "architecture"], locations: [restaurantAttractions[1]]))
+ListOfCities.append(City(id: 6, name: "Gdynia", description: "The city by the sea", latitude: 54.518889, longitude: 18.53054, keywords: ["seaside", "sport", "history"], locations: [restaurantAttractions[2]]))
+ListOfCities.append(City(id: 7, name: "Katowice", description: "The heart of Silesia", latitude: 50.259898, longitude: 19.021585, keywords: ["culture", "business", "sport"], locations: [restaurantAttractions[3]]))
+ListOfCities.append(City(id: 8, name: "Szczecin", description: "The city of parks and gardens", latitude: 53.4285438, longitude: 14.5528115, keywords: ["nature", "history", "culture"], locations: [restaurantAttractions[4]]))
+
+
+
+
+var resultlist = searchCitiesByName(name: "Gdańsk");
+for city in resultlist
+{
+    city.printCityDetails();
+}
+let citiesWithKeywordWW2 = searchCitiesByKeyword(keyword: "Capital");
+
+for city in citiesWithKeywordWW2
 {
     city.printCityDetails();
 }
 
+// zadanie 3
 
+var distance = distanceBetweenCities(city1: ListOfCities[0],city2: ListOfCities[1]);
+print("Distance: \(distance)")
+
+let (closestCity, farthestCity) = findClosestAndFarthestCities(userLat: 51.5074, userLon: 0.1278, ListOfCities: ListOfCities)
+
+if let closestCity = closestCity {
+    print("The closest city to your location is: \(closestCity.name)")
+} else {
+    print("No closest city found.")
+}
+
+if let farthestCity = farthestCity {
+    print("The farthest city to your location is: \(farthestCity.name)")
+} else {
+    print("No farthest city found.")
+}
+
+// zadanie 5
+func displayCitiesWithTopRatedRestaurants(cities: [City]) {
+    for city in cities {
+        for attraction in city.locations {
+            if attraction.type == .restaurant, attraction.rating == .Wonderful 
+            {
+                print("City: \(city.name), Restaurant: \(attraction.name)")
+            }
+        }
+    }
+}
+
+displayCitiesWithTopRatedRestaurants(cities: ListOfCities)
