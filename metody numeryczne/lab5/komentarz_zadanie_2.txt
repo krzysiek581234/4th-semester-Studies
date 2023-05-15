@@ -1,0 +1,8 @@
+Wielomianowa interpolacja funkcji jest podatna na efekt Rungego, co oznacza, że zwiększenie liczby punktów pomiarowych może prowadzić do zwiększenia oscylacji interpolacji, a co za tym idzie do zwiększenia dywergencji. Natomiast interpolacja trygonometryczna jest mniej podatna na ten efekt i może prowadzić do bardziej gładkiej interpolacji, co zmniejsza dywergencję.
+
+Widoczne jest to w stały zmiejszaniu wartości dywardencji w przypadku interpolacji trygonometrycznej wraz z większenie ilośći punktów pomiarowych.
+
+
+W przypadku interpolacji wielomianowej zwiększenie liczby punktów pomiarowych może prowadzić do sytuacji, w której współczynniki interpolującego wielomianu stają się bardziej skomplikowane i liczne, co z kolei może prowadzić do wzrostu dywergencji. W przypadku interpolacji trygonometrycznej, zwiększenie liczby punktów pomiarowych prowadzi do zmiany amplitudy i fazy funkcji trygonometrycznych, co z kolei może prowadzić do bardziej dokładnej interpolacji bez zwiększania dywergencji.
+
+Natomiast interpolacja wielomianowa utrzymuje dywargencja na stałym poziomie.

@@ -50,11 +50,12 @@ d = 0.85
      r = M\b;
      czas_Gauss(i) = toc;
  end
- title("Sposob bezposredni")
- xlabel("wielkosc Macierzy");
- ylabel("Czas")
+ figure('Name','D');
  plot(N, czas_Gauss)
- print -dpng zadanieD
+ title("Sposob bezposredni - Gauss")
+ xlabel("wielkosc Macierzy");
+ ylabel("Czas");
+print -dpng 'zadanieD.png'
 %------------------
 
 % Zadanie E
@@ -194,32 +195,34 @@ L = tril(M,-1) ;
 U = triu(M,1) ;
 D = diag(diag(M));
 % Gauss
+tab1 = [];
+tab2 = [];
+quit = 0;
 while(true)
-   licznik(1) = licznik(1) +1;
+   quit = quit +1;
    r = -(D + L)\(U*r)+(D+L)\b;
    res = M *r -b;
-   tab(1,licznik(1)) = norm(res);
+   tab1(end+1) = norm(res);
    %norm(res)
-   if(norm(res) <= border || licznik(1) >= 500)
+   if(norm(res) <= border || quit >= 500)
        break;
    end
 end
 %Jacobi
 while(true)
-   licznik(2) = licznik(2) +1;
    r = -D \(L + U)*r + D \ b;
    res = M *r -b;
-   tab(2,licznik(2)) = norm(res);
+   tab2(end+1) = norm(res);
    %norm(res)
-   if(norm(res) <= border || licznik(2) >= 500)
+   if(norm(res) <= border || quit >= 500)
        break;
    end
 end
 
 figure('Name', 'Zadanie G - Porównanie Gaussa-Seidla i Jacobiego', 'NumberTitle', 'off');
-semilogy(tab(1, 1:licznik(1)));
+semilogy(tab1);
 hold on
-semilogy(tab(2, 1:licznik(2)));
+semilogy(tab2);
 legend('Gauss', 'Jacobi');
 title('Zadanie G - Porównanie Gaussa-Seidla i Jacobiego');
 ylabel('Wartość normalna res');
