@@ -1,0 +1,6 @@
+(a) Jaka jest różnica pomiędzy interpolacją danych zawierających 151 wartości oraz ich
+aproksymacją, gdy rząd aproksymacji wynosi 150?
+W przypadku danych w ilości 151 i rzędu aproksymacja jest w stanie przejść przez wszystkie punkty co oznacza że błąd aproksymacji będzie niewystępował ponieważ aproksymacja przejdzie przez wszytskie punkty, więc aproksymacja jest równa iterpolacji.
+(b) Czy dla aproksymacji trygonometrycznej występuje efekt Rungego?
+
+Efekt Rungego jest zjawiskiem występującym w interpolacji za pomocą wielomianów wysokich stopni na równomiernie rozmieszczonych węzłach. Powoduje to występowanie oscylacji i niepożądanych efektów w aproksymacji, szczególnie na brzegach przedziału interpolacji.

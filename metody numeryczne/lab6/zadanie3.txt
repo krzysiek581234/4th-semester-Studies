@@ -1,0 +1,3 @@
+Biorąc pod uwagę błędy pomiarowe aproksymacja byłaby lepszym rozwiązaniem. Punkty wyznaczone za pomocą interpolacji mogą w ogólności wyznaczyć bardziej dokładną pozycję drona, ponieważ 
+
+
