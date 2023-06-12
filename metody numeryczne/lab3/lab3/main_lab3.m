@@ -1,32 +1,31 @@
+%% Zadanie A
 clc
 clear all
 close all
-
-% komentowanie/odkomentowywanie: ctrl+r / ctrl+t
-
-% Zadanie A
-%------------------
 d = 0.85;
 N = 10;
 density = 3; % parametr decydujacy o gestosci polaczen miedzy stronami
 [edges] = generate_network(N, density);
-%-----------------
-% Zadanie B - generacja macierzy I, A, B i wektora b
+
+
+%% Zadanie B - generacja macierzy I, A, B i wektora b
 B = sparse(edges(2,:),edges(1,:),1,N,N); % B -macierz sąsiedztwa
+issparse(B)
 I = speye(N); % I - macierz jednostkowa
 L = sum(B); % L liczba odnoścników wychodziących z i-tej strony
 b = (1-d)/N * ones(N, 1); %b mają wartość (1 − d)/N, gdzie d jest współczynnikiem tłumienia.
 A = spdiags(1./L',0:0,N,N); % macierz jednostkowa
-%------------------
-% macierze A, B i I musza byc przechowywane w formacie sparse (rzadkim)
+
+
+
 whos('A', 'B', 'I')
-%-----------------
-% zadanie C
+
+
+%% zadanie C
 M = sparse(I - d * B * A);
 r = M\b
 r
-% Zadanie D
-%------------------
+%% Zadanie D
  clc
  clear all
  close all
@@ -56,10 +55,9 @@ d = 0.85
  xlabel("wielkosc Macierzy");
  ylabel("Czas");
 print -dpng 'zadanieD.png'
-%------------------
 
-% Zadanie E
-%------------------
+%% Zadanie E
+
  clc
  clear all
  close all
@@ -113,11 +111,10 @@ title('Zadanie E - Jacobiego - norma z residum dla macierzy o wielkosci N = 1000
 ylabel("Norma");
 xlabel("Nr iteracji");
 print -dpng 'zadanieE_norma.png'
-%------------------
 
 
-% Zadanie F
-%------------------
+%% Zadanie F
+
  clc
  vars = who; % Pobierz nazwy wszystkich zmiennych
  vars(ismember(vars, 'czas_Jacobi')) = []; % Usuń nazwę wektora do zachowania
@@ -182,7 +179,7 @@ print -dpng 'zadanieF_norma.png'
 % xlabel("Rozmiar macierzy");
 % print -dpng 'zadanieF_porównanie.png'
 
-% Zadanie G
+%% Zadanie G
 clc
 clear all
 close all
@@ -209,12 +206,14 @@ while(true)
    end
 end
 %Jacobi
+quit = 0;
 while(true)
+   quit = quit +1;
    r = -D \(L + U)*r + D \ b;
-   res = M *r -b;
-   tab2(end+1) = norm(res);
+   res2 = M *r -b;
+   tab2(end+1) = norm(res2);
    %norm(res)
-   if(norm(res) <= border || quit >= 500)
+   if(norm(res2) <= border || quit >= 500)
        break;
    end
 end
@@ -228,10 +227,6 @@ title('Zadanie G - Porównanie Gaussa-Seidla i Jacobiego');
 ylabel('Wartość normalna res');
 xlabel('Rozmiar macierzy');
 print -dpng 'zadanieG_porównanie.png'
-
-
-
-%------------------
 
 
 

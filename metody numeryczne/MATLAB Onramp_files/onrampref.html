@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!-- saved from url=(0103)https://matlabacademy-content.mathworks.com/4.47.1/R2022b/content/Additional%20Resources/onrampref.html -->
+<html class="wf-museoslab-n7-active wf-futurapt-n7-active wf-futurapt-i7-active wf-futurapt-n4-active wf-futurapt-i5-active wf-futurapt-n5-active wf-automate-n4-active wf-minionprosubhead-n4-active wf-futurapt-i4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Fonts -->
+    <script type="text/javascript" src="./omk6upx.js.pobrane"></script>
+    <style type="text/css">.tk-museo-slab{font-family:"museo-slab",serif;}.tk-futura-pt{font-family:"futura-pt",sans-serif;}.tk-automate{font-family:"automate",sans-serif;}.tk-minion-pro-subhead{font-family:"minion-pro-subhead",serif;}</style><style type="text/css">@font-face{font-family:museo-slab;src:url(//fonts.mathworks.com/k/0e548aec395bd99926a27577e842e818def6ba83-l.woff2) format("woff2"),url(//fonts.mathworks.com/k/0e548aec395bd99926a27577e842e818def6ba83-d.woff) format("woff"),url(//fonts.mathworks.com/k/0e548aec395bd99926a27577e842e818def6ba83-a.otf) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:futura-pt;src:url(//fonts.mathworks.com/k/87868ea7533b245fa343d5fd2e370ee0daee1db8-l.woff2) format("woff2"),url(//fonts.mathworks.com/k/87868ea7533b245fa343d5fd2e370ee0daee1db8-d.woff) format("woff"),url(//fonts.mathworks.com/k/87868ea7533b245fa343d5fd2e370ee0daee1db8-a.otf) format("opentype");font-weight:500;font-style:normal;}@font-face{font-family:futura-pt;src:url(//fonts.mathworks.com/k/fa63f4ee95571fac0c3fde550489d0874f44e7d1-l.woff2) format("woff2"),url(//fonts.mathworks.com/k/fa63f4ee95571fac0c3fde550489d0874f44e7d1-d.woff) format("woff"),url(//fonts.mathworks.com/k/fa63f4ee95571fac0c3fde550489d0874f44e7d1-a.otf) format("opentype");font-weight:500;font-style:italic;}@font-face{font-family:futura-pt;src:url(//fonts.mathworks.com/k/78f589bb61056c7dc2c42601e2fd59aa96941141-l.woff2) format("woff2"),url(//fonts.mathworks.com/k/78f589bb61056c7dc2c42601e2fd59aa96941141-d.woff) format("woff"),url(//fonts.mathworks.com/k/78f589bb61056c7dc2c42601e2fd59aa96941141-a.otf) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:futura-pt;src:url(//fonts.mathworks.com/k/599bfc6908295758da16f495738fa5c76ccf9542-l.woff2) format("woff2"),url(//fonts.mathworks.com/k/599bfc6908295758da16f495738fa5c76ccf9542-d.woff) format("woff"),url(//fonts.mathworks.com/k/599bfc6908295758da16f495738fa5c76ccf9542-a.otf) format("opentype");font-weight:700;font-style:italic;}@font-face{font-family:futura-pt;src:url(//fonts.mathworks.com/k/0ffa5e8c8eb076cc21ede9987250dfa4f2af4438-l.woff2) format("woff2"),url(//fonts.mathworks.com/k/0ffa5e8c8eb076cc21ede9987250dfa4f2af4438-d.woff) format("woff"),url(//fonts.mathworks.com/k/0ffa5e8c8eb076cc21ede9987250dfa4f2af4438-a.otf) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:futura-pt;src:url(//fonts.mathworks.com/k/3f4899217323502feaae94c179311206f731a52e-l.woff2) format("woff2"),url(//fonts.mathworks.com/k/3f4899217323502feaae94c179311206f731a52e-d.woff) format("woff"),url(//fonts.mathworks.com/k/3f4899217323502feaae94c179311206f731a52e-a.otf) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:automate;src:url(//fonts.mathworks.com/k/5206f40617c623d40dd6b3ccbaacecaf00952a16-l.woff2) format("woff2"),url(//fonts.mathworks.com/k/5206f40617c623d40dd6b3ccbaacecaf00952a16-d.woff) format("woff"),url(//fonts.mathworks.com/k/5206f40617c623d40dd6b3ccbaacecaf00952a16-a.otf) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:minion-pro-subhead;src:url(//fonts.mathworks.com/k/d4d1694195e6776198a56670eb3252a367c04b04-l.woff2) format("woff2"),url(//fonts.mathworks.com/k/d4d1694195e6776198a56670eb3252a367c04b04-d.woff) format("woff"),url(//fonts.mathworks.com/k/d4d1694195e6776198a56670eb3252a367c04b04-a.otf) format("opentype");font-weight:400;font-style:normal;}</style><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<link type="text/css" rel="stylesheet" href="./training.lecture.css"></head>
+<body class="lectureContent">
+<div class="showThenHide" style="display: none;">Rendering page...</div>
+<div style="opacity: 1;" class="hideThenShow" data-qrg="true">
+    <h1>Summary of MATLAB Onramp</h1>
+    <div class="spacer"></div>
+    <div style="width:760px">
+
+    <div class="descObj">
+        <div class="desc">
+            <h2>Basic Syntax</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="https://www.mathworks.com/help/matlab/matlab_env/create-and-edit-variables.html" target="_blank"><code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">x</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="const">pi</span></code></a></td>
+                    <td>Create variables and assign values with the equal sign (<code class="lang-matlab prettyprinted prettyprint" style=""><span class="pun">=</span></code>).<br>The left side (<code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">x</span></code>) is the variable name, and the right side (<code class="lang-matlab prettyprinted prettyprint" style=""><span class="const">pi</span></code>) is its value.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.mathworks.com/help/matlab/learn_matlab/calling-functions.html" target="_blank"><code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">y</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="fun">sin</span><span class="tag">(</span><span class="lit">-5</span><span class="tag">)</span></code></a></td>
+                    <td>Provide inputs to a function using parentheses.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Desktop Management</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="https://www.mathworks.com/help/matlab/ref/save.html" target="_blank"><code class="lang-matlab prettyprinted prettyprint" style=""><span class="fun">save</span></code></a></td>
+                    <td><code class="lang-matlab prettyprint">save <span style="color:rgb(160,32,240)">data.mat</span></code></td>
+                    <td>Save your current workspace to a MAT-file.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.mathworks.com/help/matlab/ref/load.html" target="_blank"><code class="lang-matlab prettyprinted prettyprint" style=""><span class="fun">load</span></code></a></td>
+                    <td><code class="lang-matlab prettyprint">load <span style="color:rgb(160,32,240)">data.mat</span></code></td>
+                    <td>Load the variables in a MAT-file to the workspace.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.mathworks.com/help/matlab/ref/clear.html" target="_blank"><code class="lang-matlab prettyprinted prettyprint" style=""><span class="fun">clear</span></code></a></td>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="fun">clear</span></code></td>
+                    <td>Clear all variables from the workspace.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.mathworks.com/help/matlab/ref/clc.html" target="_blank"><code class="lang-matlab prettyprinted prettyprint" style=""><span class="fun">clc</span></code></a></td>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="fun">clc</span></code></td>
+                    <td>Clear all text from the Command Window.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.mathworks.com/help/matlab/ref/format.html" target="_blank"><code class="lang-matlab prettyprinted prettyprint" style=""><span class="fun">format</span></code></a></td>
+                    <td><code class="lang-matlab prettyprint">format <span style="color:rgb(160,32,240)">long</span></code></td>
+                    <td>Change how numeric output appears in the Command Window.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Array Types</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">4</span></code></td>
+                    <td>scalar</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="tag">[</span><span class="lit">3</span><span class="pln"> </span><span class="lit">5</span><span class="tag">]</span></code></td>
+                    <td>row vector</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="tag">[</span><span class="lit">1</span><span class="pun">;</span><span class="lit">3</span><span class="tag">]</span></code></td>
+                    <td>column vector</td>
+                </tr><tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="tag">[</span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="lit">7</span><span class="pln"> </span><span class="lit">8</span><span class="tag">]</span></code></td>
+                    <td>matrix</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Evenly Spaced Vectors</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span><span class="pun">:</span><span class="lit">4</span></code></td>
+                    <td>Create a vector from <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span></code> to <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">4</span></code>, spaced by <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span></code>, using the <a target="_blank" href="https://www.mathworks.com/help/matlab/ref/colon.html">colon operator (<code class="lang-matlab prettyprinted prettyprint" style=""><span class="pun">:</span></code>)</a>.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span><span class="pun">:</span><span class="lit">0.5</span><span class="pun">:</span><span class="lit">4</span></code></td>
+                    <td>Create a vector from <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span></code> to <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">4</span></code>, spaced by <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">0.5</span></code>.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/linspace.html"><span class="fun">linspace</span></a><span class="tag">(</span><span class="lit">1</span><span class="pun">,</span><span class="lit">10</span><span class="pun">,</span><span class="lit">5</span><span class="tag">)</span></code></td>
+                    <td>Create a vector with <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">5</span></code> elements. The values are evenly spaced from <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span></code> to <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">10</span></code>.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Matrix Creation</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/rand.html"><span class="fun">rand</span></a><span class="tag">(</span><span class="lit">2</span><span class="tag">)</span></code></td>
+                    <td>Create a square matrix with <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">2</span></code> rows and <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">2</span></code> columns.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/zeros.html"><span class="fun">zeros</span></a><span class="tag">(</span><span class="lit">2</span><span class="pun">,</span><span class="lit">3</span><span class="tag">)</span></code></td>
+                    <td>Create a rectangular matrix with <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">2</span></code> rows and <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">3</span></code> columns of <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">0</span></code>s.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/ones.html"><span class="fun">ones</span></a><span class="tag">(</span><span class="lit">2</span><span class="pun">,</span><span class="lit">3</span><span class="tag">)</span></code></td>
+                    <td>Create a rectangular matrix with <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">2</span></code> rows and <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">3</span></code> columns of <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span></code>s.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Array Indexing</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code class="lang-matlab prettyprint">A(<a href="https://www.mathworks.com/help/matlab/ref/end.html" target="_blank"><span class="noprettyprint">end</span></a>,2)</code></td>
+                    <td>Access the element in the second column of the last row.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">A</span><span class="tag">(</span><span class="lit">2</span><span class="pun">,:</span><span class="tag">)</span></code></td>
+                    <td>Access the entire second row.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">A</span><span class="tag">(</span><span class="lit">1</span><span class="pun">:</span><span class="lit">3</span><span class="pun">,:</span><span class="tag">)</span></code></td>
+                    <td>Access all columns of the first three rows.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">A</span><span class="tag">(</span><span class="lit">2</span><span class="tag">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">11</span></code></td>
+                    <td>Change the value of the second element of an array to <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">11</span></code>.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Array Operations</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><pre class="lang-matlab prettyprinted prettyprint" style=""><span class="tag">[</span><span class="lit">1</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="tag">]</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+</span><span class="const">ans</span><span class="pln"> </span><span class="pun">=</span><span class="pln">
+     </span><span class="lit">2</span><span class="pln">     </span><span class="lit">3</span><span class="pln">
+     </span><span class="lit">4</span><span class="pln">     </span><span class="lit">5</span></pre></td>
+                    <td>Perform <a target="_blank" href="https://www.mathworks.com/help/matlab/ref/plus.html">array addition</a>.</td>
+                </tr>
+                <tr>
+                    <td><pre class="lang-matlab prettyprinted prettyprint" style=""><span class="tag">[</span><span class="lit">1</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="lit">1</span><span class="tag">]</span><span class="pun">*</span><span class="tag">[</span><span class="lit">2</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="lit">2</span><span class="tag">]</span><span class="pln">
+</span><span class="const">ans</span><span class="pln"> </span><span class="pun">=</span><span class="pln">
+     </span><span class="lit">4</span><span class="pln">     </span><span class="lit">4</span><span class="pln">
+     </span><span class="lit">4</span><span class="pln">     </span><span class="lit">4</span></pre></td>
+                    <td>Perform <a target="_blank" href="https://www.mathworks.com/help/matlab/matlab_prog/array-vs-matrix-operations.html#btyv9yp-4">matrix multiplication</a>.</td>
+                </tr>
+                <tr>
+                    <td><pre class="lang-matlab prettyprinted prettyprint" style=""><span class="tag">[</span><span class="lit">1</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="lit">1</span><span class="tag">]</span><span class="pun">.*</span><span class="tag">[</span><span class="lit">2</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="lit">2</span><span class="tag">]</span><span class="pln">
+</span><span class="const">ans</span><span class="pln"> </span><span class="pun">=</span><span class="pln">
+     </span><span class="lit">2</span><span class="pln">     </span><span class="lit">2</span><span class="pln">
+     </span><span class="lit">2</span><span class="pln">     </span><span class="lit">2</span></pre></td>
+                    <td>Perform <a target="_blank" href="https://www.mathworks.com/help/matlab/matlab_prog/array-vs-matrix-operations.html#bu90xxy-1">element-wise multiplication</a>.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Multiple Outputs</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="tag">[</span><span class="ident">xrow</span><span class="pun">,</span><span class="ident">xcol</span><span class="tag">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/size.html"><span class="fun">size</span></a><span class="tag">(</span><span class="ident">x</span><span class="tag">)</span></code></td>
+                    <td>Save the number of rows and columns in <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">x</span></code> to two different variables.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="tag">[</span><span class="ident">xMax</span><span class="pun">,</span><span class="ident">idx</span><span class="tag">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/max.html"><span class="fun">max</span></a><span class="tag">(</span><span class="ident">x</span><span class="tag">)</span></code></td>
+                    <td>Calculate the maximum value of <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">x</span></code> and its corresponding index value.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Documentation</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code class="lang-matlab prettyprint"><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/doc.html">doc</a> <span style="color:rgb(160,32,240)">randi</span></code></td>
+                    <td>Open the documentation page for the <code class="lang-matlab prettyprinted prettyprint" style=""><span class="fun">randi</span></code> function.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Plots</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/plot.html"><span class="fun">plot</span></a><span class="tag">(</span><span class="ident">x</span><span class="pun">,</span><span class="ident">y</span><span class="pun">,</span><span class="str">"ro--"</span><span class="pun">,</span><span class="str">"LineWidth"</span><span class="pun">,</span><span class="lit">5</span><span class="tag">)</span></code></td>
+                    <td>Plot a red (<code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">r</span></code>) dashed (<code class="lang-matlab prettyprinted prettyprint" style=""><span class="pun">--</span></code>) line with a <br>circle (<code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">o</span></code>) marker, with a heavy line width.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprint"><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/hold.html">hold</a> <span style="color:rgb(160,32,240)">on</span></code></td>
+                    <td>Add the next line to the existing plot.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprint">hold <span style="color:rgb(160,32,240)">off</span></code></td>
+                    <td>Create new axes for the next plotted line.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/title.html"><span class="fun">title</span></a><span class="tag">(</span><span class="str">"My Title"</span><span class="tag">)</span></code></td>
+                    <td>Add a title to a plot.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/xlabel.html"><span class="fun">xlabel</span></a><span class="tag">(</span><span class="str">"x"</span><span class="tag">)</span></code><br><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/ylabel.html"><span class="fun">ylabel</span></a><span class="tag">(</span><span class="str">"y"</span><span class="tag">)</span></code></td>
+                    <td>Add labels to axes.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/legend.html"><span class="fun">legend</span></a><span class="tag">(</span><span class="str">"a"</span><span class="pun">,</span><span class="str">"b"</span><span class="pun">,</span><span class="str">"c"</span><span class="tag">)</span></code></td>
+                    <td>Add a legend to a plot.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Tables</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/matlab_prog/access-data-in-a-table.html"><span class="ident">data.HeightYards</span></a></code></td>
+                    <td>Extract the variable <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">HeightYards</span></code> from<br>the table <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">data</span></code>.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">data.HeightMeters</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="ident">data.HeightYards</span><span class="pun">*</span><span class="lit">0.9144</span></code></td>
+                    <td>Derive a table variable from existing data.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Logical Indexing</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/matlab_prog/array-comparison-with-relational-operators.html"><span class="tag">[</span><span class="lit">5</span><span class="pln"> </span><span class="lit">10</span><span class="pln"> </span><span class="lit">15</span><span class="tag">]</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">12</span></a></code></td>
+                    <td>Compare the elements of a vector to the value <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">12</span></code>.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/matlab_prog/find-array-elements-that-meet-a-condition.html"><span class="ident">v1</span><span class="tag">(</span><span class="ident">v1</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">6</span><span class="tag">)</span></a></code></td>
+                    <td>Extract all elements of <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">v1</span></code> that are greater than <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">6</span></code>.</td>
+                </tr>
+                <tr>
+                    <td><code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">x</span><span class="tag">(</span><span class="ident">x</span><span class="pun">==</span><span class="lit">999</span><span class="tag">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span></code></td>
+                    <td>Replace all values in <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">x</span></code> that are equal to <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">999</span></code> with the value <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span></code>.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <h2>Programming</h2>
+            <table class="dataTable">
+                <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><pre class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/if.html"><span class="kwd">if</span></a><span class="pln"> </span><span class="ident">x</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0.5</span><span class="pln">
+    </span><span class="ident">y</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">3</span><span class="pln">
+</span><span class="kwd">else</span><span class="pln">
+    </span><span class="ident">y</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">4</span><span class="pln">
+</span><span class="kwd">end</span></pre></td>
+                    <td>If <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">x</span></code> is greater than <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">0.5</span></code>, set <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">y</span></code> to <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">3</span></code>.<br><br>Otherwise, set <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">y</span></code> to <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">4</span></code>.</td>
+                </tr>
+                <tr>
+                    <td><pre class="lang-matlab prettyprinted prettyprint" style=""><a target="_blank" href="https://www.mathworks.com/help/matlab/ref/for.html"><span class="kwd">for</span></a><span class="pln"> </span><span class="ident">c</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">:</span><span class="lit">3</span><span class="pln">
+    </span><span class="fun">disp</span><span class="tag">(</span><span class="ident">c</span><span class="tag">)</span><span class="pln">
+</span><span class="kwd">end</span></pre></td>
+                    <td>The loop counter (<code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">c</span></code>) progresses through the<br>values <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span><span class="pun">:</span><span class="lit">3</span></code> (<code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">1</span></code>, <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">2</span></code>, and <code class="lang-matlab prettyprinted prettyprint" style=""><span class="lit">3</span></code>).<br><br>The loop body displays each value of <code class="lang-matlab prettyprinted prettyprint" style=""><span class="ident">c</span></code>.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="spacer"></div>
+    <div class="objWrapper"></div></div>
+    <div class="spacer"></div>
+
+</div>
+</div>
+
+<script type="text/javascript" src="./BrightcoveExperiences.js.pobrane"></script>
+<script type="text/javascript" src="./SmartPlayerAPI.js.pobrane"></script>
+<!-- Dojo -->
+<script> var dojoConfig = { locale:"en-us" }; </script>
+<script type="text/javascript" charset="utf-8" src="./ContentFormatter.js.pobrane"></script><script src="./dojo.js.pobrane"></script>
+<script>require(["MWTraining/lecture/ContentFormatter"]);</script>
+
+
+</body></html>

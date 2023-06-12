@@ -1,0 +1,11 @@
+Prędkość
+Prostokoątów
+Monte Carlo
+Trapezów
+Simpsona
+Dokładność
+Trapezów
+Simsona/Prostokątów/Monte Carlo
+
+Najszybsza metoda jest metodą prostokątów jednakże ma ona dość istotny błąd. Metoda trapezów okazała się najbardziej dokładna jednoczesnie nie jest najwolniejszą metodą. Metoda Mounte Carlo jest szybka i jednocześnie jej dokładność nie jest znacząco gorsza niż metoda prosokątów i Simsona
+Metoda Simpsona jest najwolniejsza i jednocześnie niedokładna. 

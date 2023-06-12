@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)https://matlabacademy.mathworks.com/R2022b/portal.html?course=gettingstarted#chapter=14&lesson=1&section=1 -->
+<html class="dj_webkit dj_chrome dj_contentbox" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>MATLAB Onramp</title>
+
+    <link rel="shortcut icon" href="https://matlabacademy.mathworks.com/favicon.ico">
+
+    <link rel="stylesheet" href="./MATLAB Onramp_files/training.webwidget.css">
+    <link rel="stylesheet" href="./MATLAB Onramp_files/training.motw.app.css">
+    <link rel="stylesheet" href="./MATLAB Onramp_files/training.app.css">
+
+    
+    
+    
+
+    <link rel="stylesheet" href="./MATLAB Onramp_files/omk6upx.css">
+
+    <script type="text/javascript" async="" src="./MATLAB Onramp_files/ahy.js.pobrane"></script><script>
+        digitalData = {
+            pageInstanceID: document.title,
+            page:{
+                pageInfo:{
+                    destinationURL: document.location.href
+                },
+                category:{
+                    primaryCategory: "matlabacademy",
+                    subCategory1: "matlabacademy/" + "gettingstarted",
+                    pageType: "mlac"
+                },
+                attributes:{
+                    descriptonCode:"mlac",
+                    courseName: "gettingstarted"
+                }
+            }
+        };
+    </script>
+
+    <!-- Currently needs to be in head tag -->
+    <script async="async" type="text/javascript" src="./MATLAB Onramp_files/satelliteLib-e8d23c2e444abadc572df06537e2def59c01db09.js.pobrane"></script>
+
+    <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="initial-scale=1.0">
+
+<style>
+.headernav_matrix button { 
+  width:24px; 
+  height:24px; 
+  padding:0;
+  border: none;
+  background:none transparent; 
+  display:inline-block;
+  transition:color .3s ease;
+  position: relative;
+}
+
+.headernav_matrix button > .icon-matrix { color:#777; font-size:24px; line-height:1.00 !important;}
+.headernav_matrix button:hover > .icon-matrix,
+.headernav_matrix button:focus > .icon-matrix { color:#333; }
+
+/* MATRIX MENU TABLET AND MOBILE*/
+#header_mobile .matrix_container { 
+  margin:1px auto 0; 
+  border:none; 
+  box-shadow:none; 
+  background:#fff; 
+  float:none; 
+  overflow:hidden; 
+  position:relative;
+  z-index:3;
+  display:block !important; 
+  height:auto !important;
+}
+#header_mobile .headernav_matrix > button { 
+  width:auto; 
+  min-width:37px; 
+  height:auto; 
+  min-height:37px; 
+  margin:3.5px -1.5px 0 0; 
+  float:right; 
+}
+#header_mobile .headernav_matrix > button > .icon-matrix { color:#0076a8; }
+
+@media (min-width:768px) and (max-width:991px) {
+  .matrix_menu_container_mobile { border-top:1px solid #e7e7e7; }
+}
+
+/* DESKTOP MATRIX MENU */
+.matrix_container { 
+  width:319px; 
+  padding:0 10px 10px; 
+  margin-top:2px; 
+  border:1px solid #999; 
+  background:#fff; 
+  box-shadow:0 1px 3px 0 rgba(0,0,0,0.25); 
+  float:right; 
+  overflow:hidden; 
+  position:absolute; 
+  right:0; 
+  z-index:1037; 
+}
+.matrix_container ul.matrix_links_primary { 
+  border-bottom:1px solid #ccc; 
+}
+.matrix_container ul[class*="matrix_links_"] { 
+  width:100%; 
+  padding:10px 0 0; 
+  margin-bottom:0; 
+  float:left; 
+} 
+.matrix_container ul[class*="matrix_links_"] > li { 
+  width:99px; 
+  height:72px;
+  padding:0 5px;
+  margin:0 0 10px; 
+  float:left;
+  font-size:12px; 
+  line-height:1.25; 
+  text-align:center; 
+  white-space:nowrap; 
+} 
+.matrix_container ul[class*="matrix_links_"] > li > a { 
+  width:100%; 
+  padding:7px 0 0 0; 
+  border:none;
+  color: #0076a8 !important;
+  background:transparent; 
+  display:block; 
+  text-decoration:none !important; 
+}
+
+.matrix_container ul[class*="matrix_links_"] > li > a > img { 
+  height:38px; 
+  padding:2px; 
+  width:auto; 
+  margin:0 auto 7px; 
+  border:1px solid transparent; 
+  border-radius:5px; 
+  background-color:#fff; 
+  display:block; 
+  transition:background-color .3s ease, border-color 0.3s ease; 
+}
+.matrix_container ul[class*="matrix_links_"] > li > a > .matrix_link_title { 
+  max-width:89px; 
+  display:block; 
+  line-height:1.15; 
+  white-space:normal; 
+}
+
+.matrix_container ul[class*="matrix_links_"] > li > a:hover > img,
+.matrix_container ul[class*="matrix_links_"] > li.matrix_active > a > img { 
+  border-color:#999;  
+  background-color:#f5f5f5; 
+}
+.matrix_container_zh { 
+  font-family:"Microsoft YaHei","Segoe UI",Arial,Helvetica; 
+}
+.matrix_container_ja { 
+  font-family:Meiryo,Verdana,Arial,Helvetica,"MS P ゴシック"; 
+}
+.matrix_container_kr { 
+  font-family:Malgun Gothic, Apple Gothic, Arial, sans-serif; 
+}
+
+[class*="matrix_container_"].matrix_container ul[class*="matrix_links_"] > li { 
+  height:90px; 
+}
+[class*="matrix_container_"] { padding-bottom:0; }
+[class*="matrix_container_"].matrix_container ul[class*="matrix_links_"] > li > a { 
+  padding-bottom:2px; 
+}
+[class*="matrix_container_"].matrix_container .matrix_link_title { 
+  font-size:13px !important; 
+  line-height:1.20 !important; 
+}</style><script src="./MATLAB Onramp_files/AppMeasurement.min.js.pobrane" async=""></script><script src="./MATLAB Onramp_files/AppMeasurement_Module_ActivityMap.min.js.pobrane" async=""></script><script src="./MATLAB Onramp_files/RC974b32ae31d543638be38b5169a96bd7-source.min.js.pobrane" async=""></script><style type="text/css" id="ki-lfw-lsb"></style><style type="text/css" id="ki-lfw-lfu"></style></head>
+<body class="tundra hideFocusOutline" data-content="https://matlabacademy-content.mathworks.com/4.47.1/R2022b/content/" style="cursor: initial;">
+
+<div id="trainingApp">
+    <div id="courseView" widgetid="courseView"> <div id="courseViewport"> <div id="contentArea"> <div class="academyHeader"> <div class="headerElement leftColumn"> <button id="logo" data-dojo-attach-point="logoDiv"><span class="icon-arrow-rounded-left exitSpan"></span><span style="text-transform: uppercase; font-size: 12px; letter-spacing: 0;">Exit Course</span></button> </div> <div class="headerElement middleColumn"> <button id="courseTitle" data-dojo-attach-point="courseTitleDiv" disabled=""><span>MATLAB Onramp</span></button> <div id="courseProgressHeader" data-dojo-attach-point="courseProgressHeaderDiv" style="">(93% complete)</div> </div> <div class="headerElement rightColumn"> <div id="userName" data-dojo-attach-point="userNameDiv" style=""><span>Krzysztof Madajczak</span></div> <button id="userMenu" class="sectionIcon icon-account floatingMenuToggleButton noselect" title="User Menu" data-dojo-attach-point="userMenuDiv" style=""> <div class="dijitContentPane userMenu right white floatingMenu" id="uniqName_3_2" widgetid="uniqName_3_2" role="menu" tabindex="-1" style="display: none;"><div class="floatingMenuPointer"></div><div class="dijitContentPane" id="dijit_layout_ContentPane_2" widgetid="dijit_layout_ContentPane_2"><ul class="userMenuList"><li class="logoutMenuItem" data-test-id="progressReport"><a target="_blank" href="https://matlabacademy.mathworks.com/progress/report.html?course=gettingstarted&amp;language=en&amp;release=R2022b" data-dropdownindex="0">Download progress report</a></li><li class="logoutMenuItem"><button data-test-id="logoutBtn" data-dropdownindex="1">Sign out</button></li></ul></div></div></button> <button id="helpMenu" class="sectionIcon icon-help-circle floatingMenuToggleButton noselect" title="Help Menu" data-dojo-attach-point="helpMenuDiv" style=""> <div class="dijitContentPane helpMenu right white floatingMenu" id="uniqName_3_3" widgetid="uniqName_3_3" role="menu" tabindex="-1" style="display: none;"><div class="floatingMenuPointer"></div><div class="dijitContentPane" id="dijit_layout_ContentPane_3" widgetid="dijit_layout_ContentPane_3"><ul><li><a data-udc="ResourcesMenu.ReportProblem" target="_blank" href="https://www.mathworks.com/support/contact_us.html" data-dropdownindex="0">Contact Support</a></li><li><a data-udc="ResourcesMenu.CourseFiles" target="_blank" href="https://matlabacademy-content.mathworks.com/4.47.1/courseartifacts/gettingstarted_course_files.zip" data-dropdownindex="1">Download course files</a></li><li><a data-udc="ResourcesMenu.QuickReference" target="qrg" href="https://matlabacademy.mathworks.com/artifacts/quick-reference.html?course=gettingstarted&amp;language=en&amp;release=R2022b" data-dropdownindex="2">Course Quick Reference</a></li></ul></div></div></button> <span class="headernav_matrix" id="headernav_matrix" data-dojo-attach-point="matrixMenuSpan" style=""><div id="wrapper"><button title="Matrix Menu" class="waffle" id="matrix_waffle_large" aria-label="Mathworks Menu" type="button"><span class="icon-matrix"></span></button><header class="App-header"><div class="matrix_container collapse" aria-describedby="matrix_title"><nav class="matrix_content"><h3 class="sr-only" id="matrix_title">MathWorks Matrix Menu</h3><ul class="list-unstyled matrix_links_primary"><li class=""><a class="svg_link" href="https://matlab.mathworks.com/" role="button" aria-label="MATLAB" id="matrix_link_matlab_home"><img src="./MATLAB Onramp_files/ico-matrix-matlabonline.svg" alt="matlab_home" aria-hidden="true"><span class="matrix_link_title">MATLAB</span></a></li><li class=""><a class="svg_link" href="https://www.mathworks.com/help/" role="button" aria-label="Help Center" id="matrix_link_help_center"><img src="./MATLAB Onramp_files/ico-matrix-helpcenter.svg" alt="help_center" aria-hidden="true"><span class="matrix_link_title">Help Center</span></a></li><li class=""><a class="svg_link" href="https://www.mathworks.com/" role="button" aria-label="MathWorks" id="matrix_link_mathworks_dotcom"><img src="./MATLAB Onramp_files/ico-matrix-mathworks.svg" alt="mathworks_dotcom" aria-hidden="true"><span class="matrix_link_title">MathWorks</span></a></li></ul><ul class="list-unstyled matrix_links_secondary"><li class=""><a class="svg_link" href="https://www.mathworks.com/matlabcentral/answers/index" role="button" aria-label="MATLAB Answers" id="matrix_link_answers"><img src="./MATLAB Onramp_files/ico-matrix-answers.svg" alt="answers" aria-hidden="true"><span class="matrix_link_title">MATLAB Answers</span></a></li><li class=""><a class="svg_link" href="https://www.mathworks.com/matlabcentral/fileexchange" role="button" aria-label="File Exchange" id="matrix_link_file_exchange"><img src="./MATLAB Onramp_files/ico-matrix-fileexchange.svg" alt="file_exchange" aria-hidden="true"><span class="matrix_link_title">File Exchange</span></a></li><li class=""><a class="svg_link" href="https://www.mathworks.com/videos.html" role="button" aria-label="Videos" id="matrix_link_videos"><img src="./MATLAB Onramp_files/ico-matrix-videos.svg" alt="videos" aria-hidden="true"><span class="matrix_link_title">Videos</span></a></li><li class=""><a class="svg_link" href="https://matlabacademy.mathworks.com/" role="button" aria-label="Online Training" id="matrix_link_online_training"><img src="./MATLAB Onramp_files/ico-matrix-onlinetraining.svg" alt="online_training" aria-hidden="true"><span class="matrix_link_title">Online Training</span></a></li><li class=""><a class="svg_link" href="https://blogs.mathworks.com/" role="button" aria-label="Blogs" id="matrix_link_blogs"><img src="./MATLAB Onramp_files/ico-matrix-blogs.svg" alt="blogs" aria-hidden="true"><span class="matrix_link_title">Blogs</span></a></li><li class=""><a class="svg_link" href="https://www.mathworks.com/matlabcentral/cody" role="button" aria-label="Cody" id="matrix_link_cody"><img src="./MATLAB Onramp_files/ico-matrix-cody.svg" alt="cody" aria-hidden="true"><span class="matrix_link_title">Cody</span></a></li><li class=""><a class="svg_link" href="https://drive.matlab.com/" role="button" aria-label="MATLAB Drive" id="matrix_link_matlab_drive"><img src="./MATLAB Onramp_files/ico-matrix-matlabdrive.svg" alt="matlab_drive" aria-hidden="true"><span class="matrix_link_title">MATLAB Drive</span></a></li><li class=""><a class="svg_link" href="https://thingspeak.com/" role="button" aria-label="ThingSpeak" id="matrix_link_thingspeak"><img src="./MATLAB Onramp_files/ico-matrix-thingspeak.svg" alt="thingspeak" aria-hidden="true"><span class="matrix_link_title">ThingSpeak</span></a></li><li class=""><a class="svg_link" href="https://www.mathworks.com/support/bugreports/" role="button" aria-label="Bug Reports" id="matrix_link_bug_reports"><img src="./MATLAB Onramp_files/ico-matrix-bugreports.svg" alt="bug_reports" aria-hidden="true"><span class="matrix_link_title">Bug Reports</span></a></li><li class=""><a class="svg_link" href="https://www.mathworks.com/matlabcentral/" role="button" aria-label="Community" id="matrix_link_community"><img src="./MATLAB Onramp_files/ico-matrix-community.svg" alt="community" aria-hidden="true"><span class="matrix_link_title">Community</span></a></li></ul></nav></div></header></div></span> </div> </div> <div class="wra" data-dojo-attach-point="wraDiv" style="display: none;"><div class="wraView" id="dijit__WidgetsInTemplateMixin_0" widgetid="dijit__WidgetsInTemplateMixin_0" style="opacity: 0.6;"> <div class="wraTask" data-dojo-attach-point="wraTask"> <h3 data-dojo-attach-point="messageNode" style="display: none;"></h3> <div class="content" data-dojo-attach-point="contentNode"></div> </div> <div class="preloader" style="top: 100px; display: none;" data-dojo-attach-point="wraPreloaderContainer"><div id="dijit__WidgetsInTemplateMixin_1" widgetid="dijit__WidgetsInTemplateMixin_1"> <div class="busyOverlayContainer"> <div class="busyOverlay" data-dojo-attach-point="busyOverlay"><div class="mw-busyIndicator" data-dojo-attach-point="_busyOverlayNode" id="MW_utils_BusyOverlay_0" widgetid="MW_utils_BusyOverlay_0" style="display: none;"> <div class="underlayNode" data-dojo-attach-point="_underlayNode" style="z-index: 2000000000;"></div> <div class="spinnerBgPanel" tabindex="0" data-dojo-attach-point="_spinnerBgPanel"> <div class="spinnerNode" data-dojo-attach-point="_spinnerNode"></div> <div class="spinnerText" style="display: none;"><span></span></div></div> </div></div> <div class="busyOverlayMessage" data-dojo-attach-point="busyMessage"></div> </div> </div></div> </div></div> <div id="player" data-dojo-attach-point="playerDiv" style=""> <div id="contentPanes"> <div id="topNavigator" data-dojo-attach-point="topNavigatorDiv"> <button id="courseNavButton" title="Table of Contents Menu" data-dojo-attach-point="courseNavButtonDiv" class="floatingMenuToggleButton noselect icon-menu-reverse"><div class="dijitContentPane chapterNavMenu left floatingMenu" id="uniqName_3_1" widgetid="uniqName_3_1" role="menu" tabindex="-1" style="display: none;"><div class="floatingMenuPointer"></div></div></button> <div id="sectionHeader" data-dojo-attach-point="sectionHeaderDiv"><span title="Conclusion &gt; Additional Resources (Summary)"><b>Conclusion</b><span class="icon-arrow-open-right"></span><span>Additional Resources</span><span> (Summary)</span></span></div> <div id="sectionNavContainer" data-dojo-attach-point="sectionNavContainerDiv"><div class="sectionNavigator" id="dijit__WidgetsInTemplateMixin_6" widgetid="dijit__WidgetsInTemplateMixin_6"> <button data-dojo-attach-point="previousButtonDiv" class="previousButton" style="cursor: pointer;"><span class="icon-arrow-open-left buttonIcon"></span><span>Previous</span></button><button data-dojo-attach-point="nextButtonDiv" class="nextButton" style="cursor: pointer;"><span>Next</span><span class="icon-arrow-open-right buttonIcon"></span></button> </div></div> </div> <div id="notificationStripContainer" data-dojo-attach-point="notificationStripContainerDiv"></div> <div id="content" data-dojo-attach-point="contentDiv" style="top: 32px; opacity: 1;"> <div class="squirrelAway" style="width: 100%; height: 100%;"><iframe allow="camera;microphone" style="width: 100%; height: 100%;" src="./MATLAB Onramp_files/index.html" title="Practice"></iframe></div><div class="dijitContentPane interactiveContentPane" id="dijit_layout_ContentPane_14" widgetid="dijit_layout_ContentPane_14"><div class="dijitContentPane iframeContainer" id="dijit_layout_ContentPane_15" widgetid="dijit_layout_ContentPane_15"><iframe src="./MATLAB Onramp_files/onrampref.html" title="Summary"></iframe></div><div class="sectionNavigator iframeSectionNav" id="dijit__WidgetsInTemplateMixin_8" widgetid="dijit__WidgetsInTemplateMixin_8"> <button data-dojo-attach-point="previousButtonDiv" class="sectionPrevBtn btn companion_btn btn_color_blue" style="cursor: pointer;"><span class="icon-arrow-open-left buttonIcon"></span><span>Previous</span></button><button data-dojo-attach-point="nextButtonDiv" class="sectionNextBtn btn btn_secondary" style="cursor: pointer;"><span>Next</span><span class="icon-arrow-open-right buttonIcon"></span></button> </div></div></div> <div class="preloader" data-dojo-attach-point="coursePreloaderContainer" style="display: none;"><div id="dijit__WidgetsInTemplateMixin_5" widgetid="dijit__WidgetsInTemplateMixin_5"> <div class="busyOverlayContainer"> <div class="busyOverlay" data-dojo-attach-point="busyOverlay"><div class="mw-busyIndicator" data-dojo-attach-point="_busyOverlayNode" id="MW_utils_BusyOverlay_1" widgetid="MW_utils_BusyOverlay_1" style="display: none;"> <div class="underlayNode" data-dojo-attach-point="_underlayNode" style="z-index: 2000000000;"></div> <div class="spinnerBgPanel" tabindex="0" data-dojo-attach-point="_spinnerBgPanel"> <div class="spinnerNode" data-dojo-attach-point="_spinnerNode"></div> <div class="spinnerText" style="display: none;"><span></span></div></div> </div></div> <div class="busyOverlayMessage" data-dojo-attach-point="busyMessage"></div> </div> </div></div> </div> </div> </div> </div> </div>
+</div>
+
+<script>
+        var dojoConfig = {
+            async: true,
+            has: {
+                "production": 1
+            },
+            map: {
+                "*": {
+                    "MW/Log": "mw-log/Log",
+                    "MW/dialog": "mw-dialog-utils",
+                    "MW/dnd": "mw-dnd",
+                    "MW/utils/HtmlUtils": "mw-utils/HtmlUtils",
+                    "MW/utils/InMemoryStore": "mw-utils/InMemoryStore",
+                    "MW/utils/Utils": "mw-utils/Utils",
+                    "mw-mixins": "mw-form/mixins",
+                    "mw-menu": "mw-form"
+                }
+            },
+            cacheBust: false,
+            locale: "en",
+            domain: "https:\/\/www.mathworks.com",
+            isRelease: true
+        };
+    </script>
+<script>
+        dojoConfig.blankGif = "https:\/\/matlabacademy-content.mathworks.com\/4.47.1\/dist-webpack\/images\/blank.gif";
+        dojoConfig.baseUrl = "https:\/\/matlabacademy-content.mathworks.com\/4.47.1";
+    </script>
+
+
+
+<script>
+    window.academyAppArgs = {
+        lrsContentPath: "https:\/\/matlabacademy.mathworks.com\/R2022b\/content\/",
+        courseReleaseStatus: "active",
+        latestReleaseURL: "https:\/\/matlabacademy.mathworks.com\/R2022b\/portal.html?course=gettingstarted",
+        mwEnvironment: null,
+        courseArtifactsFolder: "https:\/\/matlabacademy-content.mathworks.com\/4.47.1\/courseartifacts\/",
+        default_trainingaddon_path: "\/CourseData\/",
+        enableNextGenFeatures: true,
+        enableLMSFeatures: null
+    };
+</script>
+
+<script src="./MATLAB Onramp_files/bundle.app.js.pobrane"></script>
+
+
+
+
+
+
+
+<!-- Adobe DTM footer -->
+<script type="text/javascript">
+    try {
+        _satellite.pageBottom();
+    } catch (e) {
+//something went wrong
+    }
+</script>
+
+
+
+<script>
+var adn_param = adn_param || [];
+adn_param.push([{  
+ ui:'100069',
+ ut:'Home'
+}]);
+</script><script>_satellite["_runScript1"](function(event, target, Promise) {
+_satellite.cookie.set("_sdsat_eid",_satellite.getVar('eid'),1);
+});</script><script>_satellite["_runScript2"](function(event, target, Promise) {
+var _kiq=_kiq||[];_kiq.push(["enableAccessibilityMode"]),setTimeout((function(){var e=document,t=e.getElementsByTagName("script")[0],s=e.createElement("script");s.type="text/javascript",s.async=!0,s.src="https://cl.qualaroo.com/ki.js/49559/ahy.js",t.parentNode.insertBefore(s,t)}),1);
+});</script><iframe id="qualaroo_dnt_frame" src="./MATLAB Onramp_files/frame.html" style="width: 1px; height: 1px; display: none; opacity: 0;"></iframe></body></html>
